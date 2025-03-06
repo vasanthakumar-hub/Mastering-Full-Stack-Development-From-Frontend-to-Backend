@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Viewport Meta Tag: The content attribute of the viewport meta tag is missing. It should be width=device-width, initial-scale=1.0. -->
+    <title>Drag & Drop</title>
+
+    <style type="text/CSS">
+        #div1 {
+            width: 500px;
+            height: 500px;
+            padding: 10px;
+            border: 1px solid #aaaaaa;
+        }
+    </style>
+    <!-- JavaScript Error: In the allowDrop function, ev.preventDefault() is the correct method, not ev.presentDefault(). -->
+    <script type="text/javascript">
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+
+        function drag(ev) {
+            ev.dataTransfer.setData("text", ev.target.id);
+        }
+
+        function drop(ev) {
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("text");
+            ev.target.appendChild(document.getElementById(data));
+        }
+    </script>
+</head>
+<body>
+    <h2>Drag and Drop Example</h2>
+
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <img id="img1" src="6.3.1.extra-large-hindu-god-lord-shiva-with-family-digital-photo-original-imagrkchu2zjh2gr.webp" alt="Lord Shiva Image" draggable="true" ondragstart="drag(event)" width="200" height="200">
+    <!-- Styling: The image you are dragging is the same size as the drop area, which might make it hard to drop it inside. You might want to resize one or the other. -->
+    <!-- Image Source: The image source provided should be a valid URL or path. 
+         Make sure the image path is correct and the image is accessible from the location where you are running this code.-->
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width= , initial-scale=1.0">
+    <title>Drag & Drop</title>
+
+    <style type="text/CSS">
+        #div1{
+            width: 500px;
+            height: 500px;
+            padding: 10px;
+            border: 1px solid #aaaaaa;
+        }
+    </style>
+
+    <script type="text/javascript">
+
+        function allowDrop(ev){
+            ev.preventDefault();
+            /* ev.presentDefault(); */
+        }
+
+        function drag(ev){
+            ev.dataTransfer.setData("text",ev.target.id);
+        }
+
+        function drop(ev){
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("text");
+            ev.target.appendChild(document.getElementById(data));
+        }
+
+    </script>
+</head>
+<body>
+    <h2>Drag and Drop Example</h2>
+
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <img id="img1" src="6.3.1.extra-large-hindu-god-lord-shiva-with-family-digital-photo-original-imagrkchu2zjh2gr.webp" alt="Lord Shiva Image" draggable="true" ondragstart="drag(event)" width="500" height="500">
+
+</body>
+</html>

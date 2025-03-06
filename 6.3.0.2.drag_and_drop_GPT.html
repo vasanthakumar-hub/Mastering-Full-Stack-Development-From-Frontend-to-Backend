@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drag & Drop</title>
+
+    <style type="text/CSS">
+        .dropzone {
+            width: 300px;
+            height: 300px;
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #aaaaaa;
+        }
+    </style>
+
+    <script type="text/javascript">
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+
+        function drag(ev) {
+            ev.dataTransfer.setData("text", ev.target.id);
+        }
+
+        function drop(ev) {
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("text");
+            ev.target.appendChild(document.getElementById(data));
+        }
+    </script>
+</head>
+<body>
+    <h2>Drag and Drop Example</h2>
+
+    <!-- Duplicate IDs: HTML elements should have unique IDs. You have multiple elements with the same id="div1" and id="img1", which will cause issues with JavaScript operations like getElementById.
+         Image Sizing: All your images and drop areas are the same size, which could make the drag-and-drop functionality harder to visualize. Consider using smaller images or different drop area sizes.
+         Duplicate Drop Areas: Instead of repeating the same drop area and image multiple times, consider creating unique IDs for each to ensure they function properly. -->
+    <div id="dropzone1" class="dropzone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <img id="img1" src="6.3.1.extra-large-hindu-god-lord-shiva-with-family-digital-photo-original-imagrkchu2zjh2gr.webp" alt="Lord Shiva Image" draggable="true" ondragstart="drag(event)" width="150" height="150">
+    <br>
+
+    <!-- <div id="dropzone2" class="dropzone" ondrop="drop(event)" ondragover="allowDrop(event)"></div> -->
+    <img id="img2" src="6.3.2.god vishnu lakshmi.jpg" alt="Lord Vishnu and Lakshmi Image" draggable="true" ondragstart="drag(event)" width="150" height="150">
+    <br>
+
+    <!-- <div id="dropzone3" class="dropzone" ondrop="drop(event)" ondragover="allowDrop(event)"></div> -->
+    <img id="img3" src="6.3.3.picture-of-hindu-gods-laksman-rama-sita-and-hanuman-india-asia-CPYNGP.jpg" alt="Rama, Sita, Laksman, and Hanuman Image" draggable="true" ondragstart="drag(event)" width="150" height="150">
+
+</body>
+</html>
+<!--In this version, each drop zone and image has a unique ID, which ensures that the drag-and-drop functionality works as intended. Additionally, I reduced the image size to make it easier to drop the images into the designated areas.-->
