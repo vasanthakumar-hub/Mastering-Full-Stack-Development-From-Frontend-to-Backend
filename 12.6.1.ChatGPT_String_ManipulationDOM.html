@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String to Uppercase</title>
+</head>
+<body>
+
+    <h1>Convert String to Uppercase</h1>
+
+    <!-- Input field for user to enter a string -->
+    <input type="text" id="userString" placeholder="Enter a string">
+    
+    <!-- Button to trigger the string conversion -->
+    <button id="uppercaseButton">Convert to Uppercase</button>
+    
+    <!-- Div to display the result -->
+    <div id="result"></div>
+
+    <script>
+        // Get references to the DOM elements
+        const userStringInput = document.getElementById('userString');
+        const uppercaseButton = document.getElementById('uppercaseButton');
+        const resultDiv = document.getElementById('result');
+
+        // Function to convert the string to uppercase
+        function convertToUppercase(str) {
+            return str.toUpperCase();
+        }
+
+        // Add an event listener to the button
+        uppercaseButton.addEventListener('click', function() {
+            // Get the value of the input field
+            const userString = userStringInput.value;
+            
+            // Convert the string to uppercase
+            const uppercaseString = convertToUppercase(userString);
+            
+            // Display the result in the result div
+            resultDiv.textContent = `Uppercase String: ${uppercaseString}`;
+        });
+    </script>
+
+</body>
+</html>

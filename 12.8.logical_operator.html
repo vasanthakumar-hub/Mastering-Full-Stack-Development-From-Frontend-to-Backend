@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Program</title>
+</head>
+<body>
+    <h1>Logical Operator!</h1>
+
+    <p id="demo"></p>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+
+    <script>
+        let a = 10;
+        let b = 5;
+
+        //Javascript elements
+        document.getElementById("demo").innerHTML = "a<20 && b<8 : "+(a<20 && b<8); //&& and operator
+
+        document.getElementById("demo1").innerHTML = "a<20 && b>8 : "+(a<20 && b>8);
+            
+        document.getElementById("demo2").innerHTML = "a<20 || b>8 : "+(a<20 || b>8); // || or operator
+
+        document.getElementById("demo3").innerHTML = "!(a<20 || b>8) : " + !(a<20 || b>8); // ! Not Operator
+    </script>
+    
+</body>
+</html>

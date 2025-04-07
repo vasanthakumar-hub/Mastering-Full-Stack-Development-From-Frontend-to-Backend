@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Manipulation using DOM</title>
+</head>
+<body>
+
+    <h1>String Manipulation</h1>
+
+    <!-- Input field for user to enter a string -->
+    <input type="text" id="userString" placeholder="Enter a string">
+    
+    <!-- Button to trigger the string manipulation -->
+    <button id="reverseButton">Reverse String</button>
+    
+    <!-- Div to display the result -->
+    <div id="result"></div>
+
+    <script>
+        // Get references to the DOM elements
+        const userStringInput = document.getElementById('userString');
+        const reverseButton = document.getElementById('reverseButton');
+        const resultDiv = document.getElementById('result');
+
+        // Function to reverse the string
+        function reverseString(str) {
+            return str.split('').reverse().join('');
+        }
+
+        // Add an event listener to the button
+        reverseButton.addEventListener('click', function() {
+            // Get the value of the input field
+            const userString = userStringInput.value;
+            
+            // Reverse the string
+            const reversedString = reverseString(userString);
+            
+            // Display the result in the result div
+            resultDiv.textContent = `Reversed String: ${reversedString}`;
+        });
+    </script>
+
+</body>
+</html>

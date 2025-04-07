@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Program</title>
+
+    <script>
+        document.addEventListener('DOMContentLoaded',()=>{
+            function createParagraph(){
+                const para = document.createElement('p');
+                para.textContent = 'You Clicked to Create Paragraph!';
+                document.body.appendChild(para);
+            }
+            const buttons = document.querySelectorAll('button')
+
+            for(const button of buttons){
+                button.addEventListener('click',createParagraph)
+            }
+        })
+    </script>
+</head>
+<body>
+    <h1>Javascript Internal !</h1>
+
+    <button onclick="createParagraph"> Click to Create  a Paragraph</button>
+    
+</body>
+</html>
